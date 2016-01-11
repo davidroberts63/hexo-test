@@ -1,0 +1,11 @@
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+test:
+  override:
+    - npm install -g hexo-cli
+    - hexo server:
+        background: true
+    - sleep 2
+    - phantomjs ./screenshots.js

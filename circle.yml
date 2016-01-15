@@ -18,7 +18,7 @@ deployment:
     commands:
       - git config --global user.name "CircleCI"
       - git config --global user.email "noone@okcsharp.net"
-      - sed -i'' "s~https://github.com/techlahoma/okcsharp-website.git~https://${GH_TOKEN}:x-oauth-basic@github.com/techlahoma/okcsharp-website.git~" _config.yml
+      - sed -i'' "s~https://github.com/davidroberts63/hexo-test.git~https://${GH_TOKEN}:x-oauth-basic@github.com/davidroberts63/hexo-test.git~" _config.yml
       - rm -rf .deploy_git/
       - hexo clean
       - hexo generate

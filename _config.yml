@@ -68,4 +68,6 @@ theme: hueman
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: https://github.com/davidroberts63/hexo-test.git
+  branch: gh-pages

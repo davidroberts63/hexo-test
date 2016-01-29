@@ -15,4 +15,4 @@ build:
           npm install
           hexo server &
           sleep 2
-          phantomjs ./screenshot.js
+          phantomjs screenshot.js

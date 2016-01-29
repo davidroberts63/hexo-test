@@ -7,7 +7,6 @@ dev:
 build:
   # The steps that will be executed on build
   steps:
-    - tcnksm/zip@0.2.0
     - script:
         code: |
           export CIRCLE_ARTIFACTS=${WERCKER_OUTPUT_DIR}/screenshots
@@ -24,7 +23,6 @@ build:
         output: ${WERCKER_OUTPUT_DIR}/sitescreenshots
 deploy:
   steps:
-    - tcnksm/ghr@0.2.0
     - tcnksm/ghr:
         token: $GITHUB_TOKEN
         input: sitescreenshots

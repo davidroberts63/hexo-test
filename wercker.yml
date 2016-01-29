@@ -1,0 +1,17 @@
+box: node
+dev:
+  steps:
+    - npm-install
+
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    - script:
+        code: |
+          export CIRCLE_ARTIFACTS=$WERCKER_CACHE_DIR/screenshots
+          npm install -g hexo-cli
+          npm install -g phantomjs
+          hexo server
+          sleep 2
+          phantomjs ./screenshot.js

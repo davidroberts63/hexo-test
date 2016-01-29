@@ -12,6 +12,7 @@ build:
           export CIRCLE_ARTIFACTS=$WERCKER_CACHE_DIR/screenshots
           npm install -g hexo-cli
           npm install -g phantomjs
+          npm install
           hexo server
           sleep 2
           phantomjs ./screenshot.js

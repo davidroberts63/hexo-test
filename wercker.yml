@@ -10,6 +10,8 @@ build:
     - script:
         code: |
           export CIRCLE_ARTIFACTS=$WERCKER_CACHE_DIR/screenshots
+          git submodule sync
+          git submodule update --init
           npm install -g hexo-cli
           npm install -g phantomjs
           npm install

@@ -10,6 +10,7 @@ build:
     - tcnksm/zip@0.2.0
     - script:
         code: |
+          export CIRCLE_ARTIFACTS=${WERCKER_OUTPUT_DIR}/screenshots
           git submodule sync
           git submodule update --init
           npm install -g hexo-cli
@@ -19,14 +20,14 @@ build:
           sleep 2
           phantomjs ./screenshots.js
     - tcnksm/zip:
-        input: "screenshots"
-        output: "site-screenshots"
+        input: ${WERCKER_OUTPUT_DIR}/screenshots
+        output: ${WERCKER_OUTPUT_DIR}/sitescreenshots
 deploy:
   steps:
     - tcnksm/ghr@0.2.0
     - tcnksm/ghr:
         token: $GITHUB_TOKEN
-        input: "site-screenshots"
+        input: sitescreenshots
         version: v0.1.0         # Relase tag default is `pre-release`
         pre_release: true       # Relase as pre-release default is false
         replace: true           # Replace release if it exists

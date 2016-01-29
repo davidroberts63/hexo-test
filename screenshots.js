@@ -41,7 +41,7 @@ function open(task, callback) {
 }
 
 function renderPage(task, callback) {
-	console.log("Rendering " + task.name + " at " + task.size.width + "x" + task.size.height);
+	console.log("Rendering " + task.name + " at " + task.size.width + "x" + task.size.height + " to " + destination);
 	var page = task.page;
 	page.viewportSize = task.size;
 	page.clipRect = { top: 0, left: 0, width: task.size.width, height: (task.size.height * 2) };
